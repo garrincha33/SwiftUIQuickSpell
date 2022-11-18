@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LetterView: View {
     let letter: Letter
-    //step 2 we want to nominate a color depending on if its
-    //valid word or not
     var color: Color
     var onTap: (Letter) -> Void
     
@@ -19,10 +17,9 @@ struct LetterView: View {
         Button {
             onTap(letter)
         } label: {
-            //step 4 create a zstack to show a nice square behind the letter
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(color)
+                    .fill(color.gradient)
                     .frame(height: 60)
                     .frame(minWidth: 30, maxWidth: 60)
                     .shadow(radius: 3)
